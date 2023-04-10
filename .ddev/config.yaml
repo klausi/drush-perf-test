@@ -17,6 +17,12 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "16"
+hooks:
+  post-start:
+    # Install Composer dependencies from the web container
+    - composer: install
+    # Install Drupal after start if not installed already
+    - exec: "(drush status bootstrap | grep -q Successful) || drush site-install -y --db-url=mysql://db:db@db/db --account-name=admin --account-pass=admin"
 
 # Key features of ddev's config.yaml:
 
