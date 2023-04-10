@@ -22,7 +22,7 @@ hooks:
     # Install Composer dependencies from the web container
     - composer: install
     # Install Drupal after start if not installed already
-    - exec: "(drush status bootstrap | grep -q Successful) || drush site-install -y --db-url=mysql://db:db@db/db --account-name=admin --account-pass=admin"
+    - exec: "(drush status bootstrap | grep -q Successful) || drush site-install -y --db-url=mysql://db:db@db/db --account-name=admin --account-pass=admin --existing-config"
 
 # Key features of ddev's config.yaml:
 
