@@ -24,6 +24,7 @@ hooks:
     # Install Drupal after start if not installed already
     - exec: "(drush status bootstrap | grep -q Successful) || ./install.sh"
     - exec: php hyperfine-install.php
+    - exec: drush uli
 
 # Key features of ddev's config.yaml:
 

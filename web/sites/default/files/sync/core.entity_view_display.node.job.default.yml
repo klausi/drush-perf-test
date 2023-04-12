@@ -1,11 +1,13 @@
-uuid: 6e3491d3-e5d8-4941-bbbc-9eecf38f2f7c
+uuid: 79a4c604-65b7-4f78-91bb-67bebcceb90e
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.job.body
+    - field.field.node.job.field_workflow_state
     - node.type.job
   module:
+    - options
     - text
     - user
 id: node.job.default
@@ -19,6 +21,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_workflow_state:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

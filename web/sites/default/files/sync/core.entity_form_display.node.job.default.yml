@@ -1,9 +1,10 @@
-uuid: a2039171-4e57-4d6a-be25-a47797b34cba
+uuid: 3206f502-6a82-451f-a2fd-9d32f198950d
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.job.body
+    - field.field.node.job.field_workflow_state
     - node.type.job
   module:
     - path
@@ -26,6 +27,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_workflow_state:
+    type: options_select
+    weight: 122
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,10 +1,11 @@
-uuid: ea5d5838-7042-4a82-ad50-63f259906c53
+uuid: 61a9a4fd-5d92-4a21-9ea2-d5148caad7a0
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.job.body
+    - field.field.node.job.field_workflow_state
     - node.type.job
   module:
     - text
@@ -27,4 +28,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_workflow_state: true
