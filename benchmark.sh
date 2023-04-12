@@ -2,7 +2,12 @@
 
 # Main benchmark script tying together all our use cases.
 
-./hyperfine --warmup 3 \
+cd bench
+../hyperfine --warmup 3 -N \
+  "drush scr load.php" \
+  "php -d opcache.file_cache=/tmp ../vendor/bin/drush scr load.php" \
+  "drush scr drush_query.php" \
+  "php -d opcache.file_cache=/tmp ../vendor/bin/drush scr drush_query.php" \
+  "php php_query.php" \
   "php empty.php" \
-  "drush scr empty.php" \
-  "php -d opcache.file_cache=/tmp vendor/bin/drush scr empty.php"
+  "../droprabbit"
