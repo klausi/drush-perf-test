@@ -1,5 +1,7 @@
 # Drush performance test
 
+Check the [presentation](drush-perf.odp).
+
 Requires [DDEV](https://ddev.readthedocs.io/en/stable/).
 
 Start Drupal site and generate dummy content: `ddev start`.
